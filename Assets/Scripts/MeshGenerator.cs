@@ -13,6 +13,7 @@ public class MeshGenerator : MonoBehaviour
 
     public bool fixedMapSize;
     [ConditionalHide(nameof(fixedMapSize), true)]
+    /// The number of chunks
     public Vector3Int numChunks = Vector3Int.one;
     [ConditionalHide(nameof(fixedMapSize), false)]
     public Transform viewer;

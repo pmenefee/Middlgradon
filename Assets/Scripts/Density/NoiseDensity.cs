@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class NoiseDensity : DensityGenerator {
 
+    public bool closeEdges;
+
     [Header ("Noise")]
     public int seed;
     public int numOctaves = 4;
@@ -11,10 +13,10 @@ public class NoiseDensity : DensityGenerator {
     public float persistence = .5f;
     public float noiseScale = 1;
     public float noiseWeight = 1;
-    public bool closeEdges;
+    
+    [Header ("Scale")]
     public float floorOffset = 1;
     public float weightMultiplier = 1;
-
     public float hardFloorHeight;
     public float hardFloorWeight;
 
