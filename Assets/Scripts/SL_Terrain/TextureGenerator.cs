@@ -3,6 +3,10 @@ using System.Collections;
 
 public static class TextureGenerator {
 
+	public static Texture2D TextureFromColourMap(Color[] colourMap, int width, int height){
+		return TextureFromColourMap(colourMap, width, height, FilterMode.Point);
+	}
+
 	public static Texture2D TextureFromColourMap(Color[] colourMap, int width, int height, FilterMode filterMode) {
 		Texture2D texture = new Texture2D (width, height);
 		texture.filterMode = filterMode; // Can be bilinear for bluriness
