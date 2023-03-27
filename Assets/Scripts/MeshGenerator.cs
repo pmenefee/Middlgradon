@@ -412,7 +412,7 @@ public class MeshGenerator : MonoBehaviour
 
     struct Triangle
     {
-#pragma warning disable 649 // disable unassigned variable warning
+//#pragma warning disable 649 // disable unassigned variable warning
         public Vector3 a;
         public Vector3 b;
         public Vector3 c;
