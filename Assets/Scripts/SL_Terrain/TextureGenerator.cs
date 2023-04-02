@@ -3,13 +3,9 @@ using System.Collections;
 
 public static class TextureGenerator {
 
-	public static Texture2D TextureFromColourMap(Color[] colourMap, int width, int height){
-		return TextureFromColourMap(colourMap, width, height, FilterMode.Point);
-	}
-
-	public static Texture2D TextureFromColourMap(Color[] colourMap, int width, int height, FilterMode filterMode) {
+	public static Texture2D TextureFromColourMap(Color[] colourMap, int width, int height) {
 		Texture2D texture = new Texture2D (width, height);
-		texture.filterMode = filterMode; // Can be bilinear for bluriness
+		texture.filterMode = FilterMode.Point;
 		texture.wrapMode = TextureWrapMode.Clamp;
 		texture.SetPixels (colourMap);
 		texture.Apply ();
@@ -17,7 +13,7 @@ public static class TextureGenerator {
 	}
 
 
-	public static Texture2D TextureFromHeightMap(float[,] heightMap, FilterMode filterMode) {
+	public static Texture2D TextureFromHeightMap(float[,] heightMap) {
 		int width = heightMap.GetLength (0);
 		int height = heightMap.GetLength (1);
 
@@ -28,7 +24,7 @@ public static class TextureGenerator {
 			}
 		}
 
-		return TextureFromColourMap (colourMap, width, height, filterMode);
+		return TextureFromColourMap (colourMap, width, height);
 	}
 
 }
